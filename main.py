@@ -226,7 +226,7 @@ async def start(message: types.Message):
                           "/reg - Зарегистрироваться на шахматном турнире\n"
                           "/set - Обновить свои данные после регистрации\n"
                           "/profil - Посмотреть свой профиль\n"
-                          "/buy - Купить билеты на шахматный турнир\n"
+                          "/buy - Получить билеты на шахматный турнир\n"
                           "/time - Узнать, сколько времени осталось до турнира\n"
                           "/info - Получить информацию о шахматном турнире\n"
                           "/help - посмотреть подробности турнира")
@@ -263,7 +263,7 @@ async def start(message: types.Message):
     if user_data:
         # profile_text = f"Имя: {user_data[1]}\nФамилия: {user_data[2]}\nКласс: {user_data[3]}"
         # await message.reply(profile_text, parse_mode=types.ParseMode.MARKDOWN)
-        await message.answer(f"чтобы купить билеты {user_data[1]} {user_data[2]} напиши в личку @RuziboevMuhammadsulton\n")
+        await message.answer(f"Чтобы получить билеты {user_data[1]} {user_data[2]} напиши в личку @RuziboevMuhammadsulton\n")
     else:
         await message.reply("Ты еще не зарегистрирован(а). Используй /reg.")
 
