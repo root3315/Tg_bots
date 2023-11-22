@@ -697,7 +697,7 @@ async def cmd_users(message: types.Message):
         
         for user in all_users:
             if len(user) >= 4:
-                users_text += f"(Имя: {user[1]} | Фамилия: {user[2]} | Класс: {user[3]} | ID: {user[0]}\n"
+                users_text += f"(Имя: {user[1]} | Фамилия: {user[2]} | Класс: {user[3]} | ID: {user[0]})\n"
                 # (ID: {user[0]} выдает iD users
             else:
                 users_text += f"Ошибка: Неправильный формат данных пользователя\n"
