@@ -694,6 +694,7 @@ async def cmd_users(message: types.Message):
                      "/edit - чтобы изменить данные пользователей\n" \
                      "/search - чтобы найти \n"
                      "/users для копи Id\n"
+        
         for user in all_users:
             if len(user) >= 4:
                 users_text += f"(Имя: {user[1]} | Фамилия: {user[2]} | Класс: {user[3]} | ID: {user[0]}\n"
