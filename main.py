@@ -512,7 +512,7 @@ async def cmd_profile(message: types.Message):
         await message.reply("Ты еще не зарегистрирован(а). Используй /reg.")
 
 # Оставшийся код шахматного турнира
-tournament_date = datetime(2023, 11, 30, 12, 00)
+tournament_date = datetime(2023, 12, 2, 12, 00)
 
 class dialog(StatesGroup):
     spam = State()
