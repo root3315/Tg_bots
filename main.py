@@ -692,8 +692,8 @@ async def cmd_users(message: types.Message):
         users_text = "Список зарегистрированных пользователей:\n" \
                      "Чтобы изменить данные пользователй \n" \
                      "/edit - чтобы изменить данные пользователей\n" \
-                     "/search - чтобы найти \n"
-                     "/user - чтобы скопировать ID\n"
+                     "/search - чтобы найти \n" \
+                     "/user - чтобы скопировать ID\n" \
         
         for user in all_users:
             if len(user) >= 4:
