@@ -693,7 +693,7 @@ async def cmd_users(message: types.Message):
                      "Чтобы изменить данные пользователй \n" \
                      "/edit - чтобы изменить данные пользователей\n" \
                      "/search - чтобы найти \n"
-                     "/users для копи Id\n"
+                     #"/users для копи Id\n"
         
         for user in all_users:
             if len(user) >= 4:
@@ -711,44 +711,44 @@ async def cmd_users(message: types.Message):
 
 
 
-@dp.message_handler(commands=['users'])
-async def start(message: types.Message):
-    if message.from_user.id == ADMIN:
-        # Открываем базу данных
-        conn = sqlite3.connect('users.db')
-        cursor = conn.cursor()
+# @dp.message_handler(commands=['users'])
+# async def start(message: types.Message):
+#     if message.from_user.id == ADMIN:
+#         # Открываем базу данных
+#         conn = sqlite3.connect('users.db')
+#         cursor = conn.cursor()
 
-        cursor.execute("SELECT * FROM users")
-        all_users = cursor.fetchall()
+#         cursor.execute("SELECT * FROM users")
+#         all_users = cursor.fetchall()
 
-        # Закрываем соединение с базой данных
-        conn.close()
+#         # Закрываем соединение с базой данных
+#         conn.close()
 
-        # users_text = "Список зарегистрированных пользователей:\n" \
-        #             "Чтобы изменить данные пользователй \n" \
-        #             "/edit - чтобы изменить данные пользователей\n" \
-        #             "/search - чтобы найти \n"
-        for user in all_users:
-            if len(user) >= 4:
-                # users_text += (f'(Имя: {user[1]} | Фамилия: {user[2]} | Класс: {user[3]} | ID: {user[0]}\n)')
+#         # users_text = "Список зарегистрированных пользователей:\n" \
+#         #             "Чтобы изменить данные пользователй \n" \
+#         #             "/edit - чтобы изменить данные пользователей\n" \
+#         #             "/search - чтобы найти \n"
+#         for user in all_users:
+#             if len(user) >= 4:
+#                 # users_text += (f'(Имя: {user[1]} | Фамилия: {user[2]} | Класс: {user[3]} | ID: {user[0]}\n)')
 
-                await message.answer(
-                    f"Имя: {user[1]} | Фамилия: {user[2]} | Класс: {user[3]} | ID: <code>{user[0]}</code> ",
-                    parse_mode='HTML')
+#                 await message.answer(
+#                     f"Имя: {user[1]} | Фамилия: {user[2]} | Класс: {user[3]} | ID: <code>{user[0]}</code> ",
+#                     parse_mode='HTML')
 
-                # users_text += f'(Имя: {user[1]} | Фамилия: {user[2]} | Класс: {user[3]} | ID: <code>{user[0]}</code>)'
+#                 # users_text += f'(Имя: {user[1]} | Фамилия: {user[2]} | Класс: {user[3]} | ID: <code>{user[0]}</code>)'
 
-                # (ID: {user[0]} выдает iD users
-            else:
-                print("Error")
-                # users_text += f"Ошибка: Неправильный формат данных пользователя\n"
+#                 # (ID: {user[0]} выдает iD users
+#             else:
+#                 print("Error")
+#                 # users_text += f"Ошибка: Неправильный формат данных пользователя\n"
 
-        # await message.reply(users_text, parse_mode=types.ParseMode.MARKDOWN)
+#         # await message.reply(users_text, parse_mode=types.ParseMode.MARKDOWN)
 
 
 
-    else:
-        await message.answer('Вы не являетесь админом')
+#     else:
+#         await message.answer('Вы не являетесь админом')
 
 
 
