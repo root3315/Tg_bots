@@ -693,7 +693,7 @@ async def cmd_users(message: types.Message):
                      "Чтобы изменить данные пользователй \n" \
                      "/edit - чтобы изменить данные пользователей\n" \
                      "/search - чтобы найти \n"
-                     "/users - для копи ID \n"
+                     "/user - чтобы скопировать ID\n"
         
         for user in all_users:
             if len(user) >= 4:
@@ -711,7 +711,7 @@ async def cmd_users(message: types.Message):
 
 
 
-@dp.message_handler(commands=['users'])
+@dp.message_handler(commands=['user'])
 async def start(message: types.Message):
     if message.from_user.id == ADMIN:
         # Открываем базу данных
